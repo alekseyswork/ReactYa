@@ -6,6 +6,8 @@ class UserModel {
         this.dob = dob;
         this.date = new Date(dob);
         this.dateNumber = this.date.getMonth();
+
     }
 }
+
 export default UserModel

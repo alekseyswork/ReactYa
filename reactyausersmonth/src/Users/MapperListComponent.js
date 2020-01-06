@@ -1,12 +1,17 @@
 import React from 'react';
 import UserComponent from './UserComponent';
 
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
 const MapperListComponent = ({ data }) => {
 
     const cardComponent = data.map((x, i) => {
         return (
-            <div key={i}>
-                <div>Mount  {x.month} Count of {x.users.length}</div>
+            <div key={i} >
+                <div>Mount  {monthNames[x.month]} Count of {x.users.length}</div>
                 {x.users.map((user, y) => {
                     return (
                         < UserComponent
@@ -21,8 +26,19 @@ const MapperListComponent = ({ data }) => {
             </div>
         )
 
-    })
+    });
+    // getCurrentCollor = () => {
 
+    //     switch (key) {
+    //         case value:
+
+    //             break;
+
+    //         default:
+    //             break;
+    //     }
+
+    // }
 
     return (
         <div>

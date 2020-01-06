@@ -3,8 +3,6 @@ import './App.css';
 import MapperListComponent from './Users/MapperListComponent';
 import UserModel from './Users/UserModel';
 import MapperUserMonth from './Users/MapperUserMonth';
-
-
 import axios from 'axios';
 
 class App extends Component {
@@ -27,9 +25,9 @@ class App extends Component {
         this.setState({
           mapper: this.state.months.map(x => new MapperUserMonth(x, this.state.users.filter(y => y.dateNumber === x)))
         });
-        console.log(this.state.users);
-        console.log(this.state.months);
-        console.log(this.state.mapper);
+        // console.log(this.state.users);
+        // console.log(this.state.months);
+        // console.log(this.state.mapper);
       });
   }
   render() {
