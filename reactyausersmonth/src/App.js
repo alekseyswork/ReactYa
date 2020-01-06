@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import UserListComponent from './Users/UserListComponent'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import axios from 'axios';
+
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      users: []
+    }
+    axios.get('https://yalantis-react-school.herokuapp.com/api/task0/users')
+      .then(res => {
+        this.setState({ users: res.data });
+        console.log(this.state.users);
+      });
+  }
+  render() {
+    return (
+      <div className='tc'>
+        <h1>Hello</h1>
+        <UserListComponent users={this.state.users} />
+      </div>
+    );
+  }
 }
-
 export default App;
