@@ -5,12 +5,12 @@ const UserComponent = ({ id, firstName, lastName, dob }) => {
   return (
     <div className='some'>
 
-      <div>
-        <h2>{id}</h2>
-        <p>{firstName}</p>
-        <p>{lastName}</p>
-        <p>{dob}</p>
-      </div>
+      <ul>
+        <li>{id}</li>
+        <li>{firstName}</li>
+        <li>{lastName}</li>
+        <li>{dob}</li>
+      </ul>
     </div>
   )
 }
