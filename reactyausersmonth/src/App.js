@@ -35,8 +35,7 @@ class App extends Component {
     if (this.state.mapper.length === 0) {
       temp = <div>Waiting</div>
     } else {
-      temp = <div className='tc'>
-        <h1>Taks list</h1>
+      temp = <div className="container">
         <MapperListComponent data={this.state.mapper} />
       </div>
     }
